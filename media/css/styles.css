@@ -1,0 +1,47 @@
+body{margin:0;padding:0;min-height:100%}
+table{float:right;position:relative;margin-right:-43px}
+ul{padding:0;margin:0}
+form{width:220px}
+.clear{clear:both}
+.all{display:table;height:100%;width:100%}
+/*Шапка*/
+.header{height:120px; background:url(../img/bkgr_header.gif)}
+.logotype{float:left;vertical-align:middle;padding-top:10px;padding-left:60px;}
+.logotype img{height:150px}
+.title{float:left;width:870px;margin-left:55px;padding-top:15px}
+.title h1 a{color:#cd0000;padding:0;margin:0;font-size:50px}
+.title h1 a:hover{text-decoration:none}
+.vhod{float:right;margin-right:20px;margin-bottom:20px;font-size:24px}
+.login{width:200px;float:right;margin-right:20px;margin-bottom:10px;font-size:24px}
+.user{float:right;margin-right:20px;margin-bottom:20px;font-size:24px}
+.news-user{width:600px}
+.form-group1{width:600px}
+.top_menu{width:100%;margin:0 auto;background:#B0C4DE;display:-moz-box;display:-webkit-flex;display:flex;}
+.top_menu a{padding:10px 10px;position:relative;text-align:center;color:#2E2B57;font-size:24px;text-decoration:none;font-weight:bolder;-moz-box-flex:1;-webkit-flex:1;flex:1;display:table-cell;border-right:1px solid #2E2B57;}
+.top_menu a:hover{text-decoration:underline;}
+.top_menu a:last-child{border:none}
+.menu_item{margin:0px;max-width:200px;position:relative; z-index:1000;text-align:center;display:table-cell;text-align:center; vertical-align:middle;}
+.menu_item a{text-decoration:none;color:#2E2B57;display:table-cell;vertical-align:middle;padding:10px 30px;-moz-box-flex:1;-webkit-flex:1;flex:1;}
+.menu_item a:hover{color:#2E2B57}
+.menu_second{display:none;position:absolute;z-index:100;width:190px;left:0px;background-color:#ddeaf6; list-style:none;font-weight:normal;padding-bottom:10px;margin:0px;text-align:left;padding-top:10px;font-family:tahoma}
+.menu_item:hover .menu_second{display:block;}
+.menu_second a{font-size:15px;display:table-cell;vertical-align:middle;color:#083c6a;padding-right:15px;width:100%;padding-left:20px;padding-top:3px;padding-bottom:3px}
+.menu_second a:hover, .menu_second_sel a{background-color:#5e94c4;color:#ffffff!important}
+.menu_second li{margin:0px;background-image:none;border-bottom:1px solid #6988b2;display:table;width:100%;padding:0px;font-weight:normal}
+.menu_second li:last-child{border-bottom:0px}
+.menu_item:last-child .menu_second{right:0px!important;left:auto}
+/*.menu_second ul{float:left;padding-left:45px}*/
+.col-md-3{position:relative;margin-left:-15px;}
+.col-md-3 a{display:block;font-size:20px;color:#fff;text-align:center}
+.col-md-5{text-align:justify;/*margin-top:-20px;*/margin-left: 10px;margin-right: -10px;}
+.col-md-5 h2{text-align:center}
+.vrezka{width:100;height:10px;background:url(../img/bkgr_header.gif)}
+.content{background:url(../img/bkgr_header.gif);height:750px}
+.btn btn-primary block{margin-bottom:1px}
+
+/*футер*/
+.footer{background-color:#FAFAD2;text-align:center;}
+.footer a{color:#2E2B57;text-decoration:none;}
+.footer a:hover{text-decoration:underline}
+
+
