@@ -114,7 +114,7 @@ else{
 <?php
 
 $database = new Database();
-$database->query("select * from maintexts where showhide='show'");
+$database->query("select * from maintexts where active='yes'");
 $rows = $database->resultset();
 foreach ($rows as $key=>$value){
 ?>
