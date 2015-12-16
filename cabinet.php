@@ -4,9 +4,9 @@ if($_SESSION['id']){
 	$query = "SELECT*FROM forms WHERE id = ".$_SESSION['id']."";
 	$database->query($query);
 	$row = $database->single();?>
-	<h3>Информация о пользователе</h3>
-	<h4 style="text-decoration:underline">Ваш e-mail:</h4><?php echo "<h5>".$row['email']."</h5>";?>
-	<h4 style="text-decoration:underline">Ваш логин:</h4><?php echo "<h5>".$row['login']."</h5>";
+	<h3 style="color:blue">Информация о пользователе</h3>
+	<h4 style="text-decoration:underline;color:red">Ваш e-mail:</h4><?php echo "<h5>".$row['email']."</h5>";?>
+	<h4 style="text-decoration:underline;color:red">Ваш логин:</h4><?php echo "<h5>".$row['login']."</h5>";
 		}
 else{
 	echo "Ошибка входа";
@@ -33,7 +33,7 @@ if($_POST){
 			echo "Новость успешно отправлена!";
 		}
 		else{
-			echo "Новость не добавилась!";
+			echo "Новость не добавилась!!";
 		}
 	}
 		else{
