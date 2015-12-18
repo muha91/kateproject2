@@ -16,33 +16,23 @@ if($_POST){
 		//echo "<pre>";
 		//print_r($_FILES);
 		//echo "</pre>";
-		if($_FILES)
-		{
-			
-			
+		if($_FILES){
+			$path = $_SERVER['DOCUMENT_ROOT'].'/media/uploaded/'.$_FILES['files1']['name'];
 			$fan = explode('.', $_FILES['files1']['name']);
 				
 				echo end($fan);
-			if(end($fan) == 'jpg'|| end($fan) == 'txt' || end($fan) == 'doc' || end($fan) == 'docx' || end($fan) == 'png'){
+			if(end($fan) == 'jpg'|| 'txt' || 'doc' || 'docx'){
 			
-				$real_name = date('y_m_d_h_i_s').'.'.end($fan);
-				$dir = $_SERVER['DOCUMENT_ROOT'].'/media/uploaded/'.$_SESSION['id'].'/';
-				$path = $dir.$real_name;
-				if(!is_file($dir)){
-					@mkdir($dir, 0777, true);
-				
-				}
 				move_uploaded_file($_FILES['files1']['tmp_name'],$path);
 			
 			} 
 			
 			else
 			{
-				$real_name = '';
 				echo "Файл не отправлен! (недопустимый формат файла)";
 			}
 			
-			
+			exit;
 		}
 		$err = array();
 		if(empty($_POST['title'])){
@@ -55,13 +45,11 @@ if($_POST){
 	
 		
 		$database = new Database();
-		$database->query("INSERT INTO news (user_id, title, editor1, add_date, files1) VALUES(:user_id, :title, :editor1, NOW(), :files1)");
+		$database->query("INSERT INTO news (user_id, title, editor1, add_date) VALUES(:user_id, :title, :editor1, NOW())");
 		
 		$database->bind(':user_id',$_SESSION['id']);
 		$database->bind(':title',$_POST['title']);
 		$database->bind(':editor1',$_POST['editor1']);
-		$database->bind(':files1',$real_name);
-		
 			
 		$result = $database->execute();
 		if($result){
@@ -92,10 +80,10 @@ if($_POST){
     <label for="exampleInputFile">Прикрепить файл</label>
     <input type="file" id="exampleInputFile" name="files1">
     </div><br/>  
-	<!--div class="form-group1">
+	<div class="form-group1">
     <label for="exampleInputImage">Прикрепить фотографию/Изображение</label>
     <input type="file" id="exampleInputImage">
-    </div--><br/>  
+    </div><br/>  
    <button type="submit" class="btn btn-default">Отправить</button>
 </form>
 </div>

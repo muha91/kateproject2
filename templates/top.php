@@ -87,7 +87,7 @@ else{
 			</ul>
 		</div>
 </div>
-<div class="menu_item"><a href="#">Конкурсы</a></div>
+<div class="menu_item"><a href="news-users.php">Статьи читателей</a></div>
 <!--<div class="menu_item"><a href="index.php?url=about">О газете</a>
 		<div class="menu_second"></div>
 </div>
@@ -99,8 +99,8 @@ else{
 if ($_SESSION['id']){
 	//echo $_SESSION['id'];
 }
-else{
-	echo "Авторизация не прошла!";
+else{?>
+	<h3 style="text-align:center;color:blue"><?php echo "Авторизация не прошла!";?></h3><?php
 }
 ?>
 <div class="vrezka"></div>
