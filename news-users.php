@@ -16,17 +16,17 @@
 		foreach($rows as $key=>$value)
 		{
 			if($value['files1']!=''){
-				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
+				$pict = "<img src = '/kateproject/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
 			}
 			else{
-				$pict = "<img src = '/media/uploaded/no_photo.jpg' class='pic'/>";
+				$pict = "<img src = '/kateproject/media/uploaded/no_photo.jpg' class='pic'/>";
 			} ?>
 			
-		<div class="one_news"><?php
+		<div class="news_item"><?php
+			echo "<a href=\"one_news.php?id=".$value['id']."\">".$value['title']."</a><br/>";
 			echo $pict;
-			echo $value['add_date'];
-			echo "<h4>".$value['title']."</h4>";
-			echo $value['editor1'];?>
+			echo $value['add_date']."<br/><hr>";
+			//echo $value['editor1'];?>
 		</div> <?php
 		}
 			

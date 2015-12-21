@@ -6,13 +6,14 @@ if($_SESSION['id']){
 	$row = $database->single();?>
 	<h3 style="color:blue">Информация о пользователе</h3>
 	<h4 style="text-decoration:underline;color:red">Ваш e-mail:</h4><?php echo "<h5>".$row['email']."</h5>";?>
-	<h4 style="text-decoration:underline;color:red">Ваш логин:</h4><?php echo "<h5>".$row['login']."</h5>";
+	<h4 style="text-decoration:underline;color:red">Ваш логин:</h4><?php echo "<h5>".$row['login']."</h5>";?>
+	<a style="color:blue" href="user_news.php">Ваши новости</a><?php
 		}
 else{
 	echo "Ошибка входа";
 }
 
-if($_POST){
+if($_POST && $_SESSION){
 		//echo "<pre>";
 		//print_r($_FILES);
 		//echo "</pre>";
@@ -25,15 +26,14 @@ if($_POST){
 				echo end($fan);
 			if(end($fan) == 'jpg'|| end($fan) == 'txt' || end($fan) == 'doc' || end($fan) == 'docx' || end($fan) == 'png'){
 			
-				$real_name = date('y_m_d_h_i_s').'.'.end($fan);
+				$real_name = date('y.m.d.h.i.s').'.'.end($fan);
 				$dir = $_SERVER['DOCUMENT_ROOT'].'/media/uploaded/'.$_SESSION['id'].'/';
 				$path = $dir.$real_name;
 				if(!is_file($dir)){
 					@mkdir($dir, 0777, true);
-				
 				}
 				move_uploaded_file($_FILES['files1']['tmp_name'],$path);
-			
+				
 			} 
 			
 			else
