@@ -12,6 +12,8 @@
 <link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.min.css" />
 <link type="text/css" rel="stylesheet" href="media/bootstrap/css/bootstrap.css" />
 <link type="text/css" rel="stylesheet" href="media/css/styles.css" />
+<script type="text/javascript" src="media/js/jquery-1.11.3.min.js"></script>
+<!--script type="text/javascript" src="media/js/my.js"></script-->
 </head>
 <body>
 <div class="all">

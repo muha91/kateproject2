@@ -11,17 +11,21 @@ if($_GET && $_GET['id'])
 	 
 		
 			if($value['files1']!=''){
-				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
+				$filename = strtok($value['files1'], ";");
+				if ($filename === false) {
+					$filename = $value['files1'];
+				} 
+				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$filename."' class='pic'/>";
 			}
 			else{
 				$pict = "<img src = '/media/uploaded/no_photo.jpg' class='pic'/>";
 			} ?>
 			
 		<div class="one_news"><?php
-			echo $value['title']."<br/>";
-			echo $pict."<br/><br/>";
-			echo $value['add_date']."<br/><br/>";
-			echo $value['editor1'];?>
+			echo "<h3 style=\"color:#2E2B57\">".$value['title']."</h3>";
+			echo $value['add_date']."<br/><br/>";?>
+			<a href="photogallery.php?id=<?=$value['id'];?>"><?php echo $pict?></a><?php "<br/><br/>";
+			echo $value['editor1']."<br/>";?>
 		</div> <?php
 		
 }	

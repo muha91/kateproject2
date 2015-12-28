@@ -3,6 +3,7 @@ table{float:none;position:relative;/*margin-right:-43px*/}
 th{color:#000;}
 ul{padding:0;margin:0}
 form{width:220px}
+.table img{width:60%}
 .col-md-5 .table-bordered > tbody > tr > td{border:1px solid #2E2B57;}
 .col-md-5 .table-bordered > tbody > tr > th{border:1px solid #2E2B57;}
 .clear{clear:both}
@@ -19,11 +20,11 @@ form{width:220px}
 .user{float:right;margin-right:20px;margin-bottom:20px;font-size:24px}
 .news-user{width:600px}
 .form-group1{width:600px}
-.top_menu{width:100%;margin:0 auto;background:#B0C4DE;display:-moz-box;display:-webkit-flex;display:flex;}
+.top_menu{width:100%;margin:0 auto;background:#B0C4DE;display:-moz-box;display:-webkit-flex;display:flex;z-index:1}
 .top_menu a{padding:10px 10px;position:relative;text-align:center;color:#2E2B57;font-size:24px;text-decoration:none;font-weight:bolder;-moz-box-flex:1;-webkit-flex:1;flex:1;display:table-cell;border-right:1px solid #2E2B57;}
 .top_menu a:hover{text-decoration:underline;}
 .top_menu a:last-child{border:none}
-.menu_item{margin:0px;max-width:200px;position:relative; z-index:1000;text-align:center;display:table-cell;text-align:center; vertical-align:middle;}
+.menu_item{margin:0px;max-width:200px;position:relative; z-index:1000;text-align:center;display:table-cell;text-align:center; vertical-align:middle;z-index:2}
 .menu_item a{text-decoration:none;color:#2E2B57;display:table-cell;vertical-align:middle;padding:10px 30px;-moz-box-flex:1;-webkit-flex:1;flex:1;}
 .menu_item a:hover{color:#2E2B57}
 .menu_second{display:none;position:absolute;z-index:100;width:190px;left:0px;background-color:#ddeaf6; list-style:none;font-weight:normal;padding-bottom:10px;margin:0px;text-align:left;padding-top:10px;font-family:tahoma}
@@ -41,10 +42,17 @@ form{width:220px}
 .vrezka{width:100;height:10px;background:url(../img/bkgr_header.gif)}
 .content{background:url(../img/bkgr_header.gif);}
 .btn btn-primary block{margin-bottom:1px}
-
+.link_for_show{}
+.btn btn-default btn-block .link_for_hide{background:#000;}
+.photo_list img{width:60%}
+.one_news img{width:60%}
+/*.btn .link_for_hide a{color:#000}*/
 /*футер*/
 .footer{background-color:#FAFAD2;text-align:center;}
 .footer a{color:#2E2B57;text-decoration:none;}
 .footer a:hover{text-decoration:underline}
-
-
+.modal-window{position:fixed;top:100px;left:50%;margin-left:-250px;width:500px;border:1px solid grey;box-shadow:1px 1px 8px black;border-radius:5px;padding:10px;z-index:100;background:#fff}
+.modal-window img{width:480px}
+.modal-close-btn{/*float:right;*/position:absolute;top:1px;right:3px;margin:0;padding:0;text-decoration:none;color:red;font-size:18px}
+.modal-close-btn:before{position:relative;top:-3px;content:"Close";font-size:12px;margin-right:3px}
+#jquery-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:black;opacity:0.7}

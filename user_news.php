@@ -21,18 +21,28 @@
 	 </tr><?php
 	foreach($rows as $key=>$value)
 		{
+			if($value['show_hide']=='show'){
+				$showhide = "<a href='hide.php?id=".$value['id']."' class='link_for_hide' style='color:red'>Скрыть</a>";
+			}else{
+				$showhide = "<a href='show.php?id=".$value['id']."' class='link_for_show' style='color:blue'>Отобразить</a>";
+			}
 			if($value['files1']!=''){
-				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
+				$filename = strtok($value['files1'], ";");
+				if ($filename === false) {
+					$filename = $value['files1'];
+				} 
+				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$filename."' class='pic' data_id='".$value['id']."' />";
 			}
 			else{
 				$pict = "<img src = '/media/uploaded/no_photo.jpg' class='pic'/>";
-			} ?>
+			} 
+			?>
 			<tr>
 			<td><?php echo $pict?></td>
 			<td><?php echo "<a href=\"one_news.php?id=".$value['id']."\">".$value['title']."</a><br/>";?></td>
 			<td><a href="news_dell.php?id=<?=$value['id'];?>" class="btn btn-default btn-block dell"  data_url="news_dell.php?id=<?=$value['id'];?>">Удалить</a>
 				<a href="news_edit.php?id=<?=$value['id'];?>" class="btn btn-default btn-block" data_url="news_dell.php?id=<?=$value['id'];?>">Редактировать</a>
-				<a href="news_active.php?id=<?=$value['id'];?>" class="btn btn-default btn-block"  data_url="news_dell.php?id=<?=$value['id'];?>">Скрыть</a>
+				<?php echo "<div class=\"btn btn-default btn-block\">".$showhide."</div>"; ?>
 			</td>
 			<!--td>Скрыть</td>
 			<td>Удалить</td-->
@@ -52,3 +62,4 @@
 
 <?php require_once('templates/bottom.php');?>
 <script type="text/javascript" src="media/js/cabinet.js"></script>
+<script type="text/javascript" src="media/js/gallery.js"></script>

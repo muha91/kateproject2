@@ -9,7 +9,7 @@
 	
 	$database = new Database();
 	//mysql_set_charset('utf8');
-	$query="select * from news order by id";
+	$query="select * from news where show_hide='show'";
 	$database->query($query);
 	$rows = $database->resultset();
 	 
