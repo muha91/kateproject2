@@ -11,21 +11,23 @@
 	//mysql_set_charset('utf8');
 	$query="select * from news where show_hide='show'";
 	$database->query($query);
-	$rows = $database->resultset();
+	$rows = $database->resultset();?>
+	<a href="#" class="google_search" style="font-size:20px;text-decoration:underline">Найти изображения</a>
+		<div id="result"></div><br/><br/><br/><?php
 	 
 		foreach($rows as $key=>$value)
 		{
 			if($value['files1']!=''){
-				$pict = "<img src = '/kateproject/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
+				$pict = "<img src = '/media/uploaded/".$value['user_id']."/".$value['files1']."' class='pic'/>";
 			}
 			else{
-				$pict = "<img src = '/kateproject/media/uploaded/no_photo.jpg' class='pic'/>";
+				$pict = "<img src = '/media/uploaded/no_photo.jpg' class='pic'/>";
 			} ?>
-			
+		
 		<div class="news_item"><?php
 			echo "<a href=\"one_news.php?id=".$value['id']."\">".$value['title']."</a><br/>";
-			echo $pict;
-			echo $value['add_date']."<br/><hr>";
+			echo $value['add_date']."<br/>";
+			echo $pict."<hr>";
 			//echo $value['editor1'];?>
 		</div> <?php
 		}
@@ -38,3 +40,25 @@
 ?>
 <?php require_once('templates/bottom.php'); 
 ?>
+<script>
+	$(function(){
+		$.ajaxSetup({
+			url:'google_search.php',
+			type:'POST',
+			beforeSend:function(){
+				$('#result').html("<img src='/media/img/loader.gif'/>");
+			},
+			success:function(data){
+				$('#result').html(data);
+			},
+			error:function(msg){
+				$('#result').html(msg);
+			},
+		});
+		$('.google_search').click(function(){
+			$.ajax({
+				data:'q=1'
+		});
+	});
+});
+</script>

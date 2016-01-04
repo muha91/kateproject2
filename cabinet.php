@@ -7,7 +7,8 @@ if($_SESSION['id']){
 	<h3 style="color:blue">Информация о пользователе</h3>
 	<h4 style="text-decoration:underline;color:red">Ваш e-mail:</h4><?php echo "<h5>".$row['email']."</h5>";?>
 	<h4 style="text-decoration:underline;color:red">Ваш логин:</h4><?php echo "<h5>".$row['login']."</h5>";?>
-	<a style="color:blue" href="user_news.php">Ваши новости</a><br/><?php
+	<a style="color:blue" href="user_news.php">Ваши новости</a><br/>
+	<a style="color:blue" href="parse_csv.php">Загрузить csv-файл</a><br/><?php
 		}
 else{
 	echo "Ошибка входа";
